@@ -49,7 +49,7 @@ class IgMineController extends Controller {
 	{
 		$images = DB::table('selfie')
 			->leftJoin('london', 'selfie.id', '=', 'london.id')
-			->select('london.*');
+			->select('london.*', 'selfie.id as is_selfie');
 
 		if($request->has('tag')){
 			$images->where('tags.tag', '=', $request->input('tag'))
