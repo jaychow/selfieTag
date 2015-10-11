@@ -22,8 +22,8 @@
 @section('footer')
     <div class="row">
         <div class="text-center col-md-12">
-            @if($tag)
-            {!! $images->appends(['tag' => $tag])->render() !!}
+            @if($append)
+            {!! $images->appends($append)->render() !!}
             @else
             {!! $images->render() !!}
             @endif

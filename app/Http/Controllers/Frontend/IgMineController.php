@@ -33,18 +33,22 @@ class IgMineController extends Controller {
 			->leftJoin('selfie','selfie.id', '=', 'london.id')
 			->select('london.*', 'selfie.id as is_selfie')
 			->orderBy('created_time', 'desc');
-		$tag = false;
+		$append = array();
 		if($request->has('tag')){
 			$images->join('tags_images', 'london.id', '=', 'tags_images.image_id')
 				   ->join('tags', 'tags_images.tag_id', '=', 'tags.id')
 				   ->where('tags.tag', '=', $request->input('tag'));
-			$tag = $request->input('tag');
+			$append['tag'] = $request->input('tag');
+		}
+		if($request->has('type')){
+			$images->where('london.type', '=', $request->input('type'));
+			$append['type'] = $request->input('type');
 		}
 		$images = $images->paginate(102);
 
 		return view('frontend.igmine.london',[
 			'images' => $images,
-			'tag' => $tag
+			'append' => $append
 
 		]);
 	}
