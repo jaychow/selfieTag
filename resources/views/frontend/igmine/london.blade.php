@@ -19,7 +19,7 @@
     </div>
     <div class="row">
         <div class="text-center col-md-12">
-            {!! $images->render() !!}
+            {!! $images->appends(['tag' => $tag])->render() !!}
         </div>
     </div>
 @endsection
