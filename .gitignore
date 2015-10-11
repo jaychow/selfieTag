@@ -13,3 +13,4 @@ _ide_helper.php
 composer.phar
 error.log
 Todo.rtf
+/public/build/css/*
