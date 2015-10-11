@@ -6,6 +6,9 @@
 @import '../../../../vendor/fortawesome/font-awesome/scss/font-awesome';
 
 // Front-end SCSS goes here.
+.img-item{
+  cursor:pointer;
+}
 .img-item.active{
   border: 3px solid #3fcd64;
 }
