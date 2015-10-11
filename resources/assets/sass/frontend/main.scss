@@ -6,8 +6,18 @@
 @import '../../../../vendor/fortawesome/font-awesome/scss/font-awesome';
 
 // Front-end SCSS goes here.
+$margin:1rem;
+
+body{
+  background-color:#F5F5F5;
+}
+.img-item-container{
+  margin-bottom:$margin;
+}
 .img-item{
   cursor:pointer;
+  margin-bottom:$margin;
+  border: $margin solid #FFF;
 }
 .img-item.active{
   border: 3px solid #3fcd64;

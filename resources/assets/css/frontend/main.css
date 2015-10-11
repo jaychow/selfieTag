@@ -8007,6 +8007,17 @@ button.close {
 .fa-fonticons:before {
   content: ""; }
 
+body {
+  background-color: #F5F5F5; }
+
+.img-item-container {
+  margin-bottom: 1rem; }
+
+.img-item {
+  cursor: pointer;
+  margin-bottom: 1rem;
+  border: 1rem solid #FFF; }
+
 .img-item.active {
   border: 3px solid #3fcd64; }
 
