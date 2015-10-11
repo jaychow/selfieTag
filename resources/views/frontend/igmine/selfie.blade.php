@@ -4,7 +4,7 @@
     {!! csrf_field() !!}
     <div class="row">
         @foreach($images as $image)
-            <div class="col-xs-6 col-sm-3 col-md-4">
+            <div class="col-xs-6 col-sm-3 col-md-2">
                 <div class="img-item text-center tag-img {{($image->is_selfie) ? 'active' : ''}}" data-id="{{$image->id}}">
                     <img class="img-responsive" src="{{$image->low_res}}" />
                 </div>
