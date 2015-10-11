@@ -19,7 +19,11 @@
     </div>
     <div class="row">
         <div class="text-center col-md-12">
-            {!! $images->appends(['tag' => $tag])->render() !!}
+            @if($tag):
+                {!! $images->appends(['tag' => $tag])->render() !!}
+            @else:
+                {!! $images->render() !!}
+            @endif
         </div>
     </div>
 @endsection
