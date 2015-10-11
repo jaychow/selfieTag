@@ -7,6 +7,7 @@ get('/', 'IgMineController@london')->name('home');
 get('macros', 'FrontendController@macros');
 get('london', 'IgMineController@london');
 get('selfie', 'IgMineController@selfie');
+get('map', 'IgMineController@map');
 post('tagSelfie', 'IgMineController@tagSelfie');
 delete('tagSelfie', 'IgMineController@removeTagSelfie');
 

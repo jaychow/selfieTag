@@ -20,6 +20,7 @@ return [
     'home' => 'Home',
     'london' => 'London',
     'selfie' => 'Selfie',
+    'map' => 'Map',
     'login' => 'Login',
     'logout' => 'Logout',
     'macros' => 'Macros',

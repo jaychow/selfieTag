@@ -8007,6 +8007,13 @@ button.close {
 .fa-fonticons:before {
   content: ""; }
 
+body,
+html,
+.main-container,
+.full-height,
+#map {
+  height: 100%; }
+
 body {
   background-color: #F5F5F5; }
 

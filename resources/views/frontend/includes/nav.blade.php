@@ -14,6 +14,7 @@
 	  <ul class="nav navbar-nav">
 		  <li>{!! link_to('/', trans('navs.home')) !!}</li>
 		  <li>{!! link_to('/selfie', trans('navs.selfie')) !!}</li>
+		  <li>{!! link_to('/map', trans('navs.map')) !!}</li>
 	  </ul>
 
 	  <ul class="nav navbar-nav navbar-right">

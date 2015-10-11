@@ -57,6 +57,35 @@ class IgMineController extends Controller {
 		]);
 	}
 
+	public function map(Request $request)
+	{
+		$images = DB::table('london')
+			->leftJoin('selfie','selfie.id', '=', 'london.id')
+			->select('london.*', 'selfie.id as is_selfie')
+			->orderBy('created_time', 'desc');
+		$append = array();
+		if($request->has('tag')){
+			$images->join('tags_images', 'london.id', '=', 'tags_images.image_id')
+				->join('tags', 'tags_images.tag_id', '=', 'tags.id')
+				->where('tags.tag', '=', $request->input('tag'));
+			$append['tag'] = $request->input('tag');
+		}
+		if($request->has('type')){
+			$images->where('london.type', '=', $request->input('type'));
+			$append['type'] = $request->input('type');
+		}
+		if($request->has('filter')){
+			$images->where('london.filter', '=', $request->input('filter'));
+			$append['filter'] = $request->input('filter');
+		}
+		$images = $images->paginate(100);
+
+		return view('frontend.igmine.map',[
+			'images' => $images,
+			'append' => $append
+		]);
+	}
+
 	public function selfie(Request $request)
 	{
 		$images = DB::table('selfie')

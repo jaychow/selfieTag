@@ -9,6 +9,14 @@
 $margin:1rem;
 $navHeight:60px;
 
+body,
+html,
+.main-container,
+.full-height,
+#map{
+  height:100%;
+}
+
 body{
   background-color:#F5F5F5;
 }
