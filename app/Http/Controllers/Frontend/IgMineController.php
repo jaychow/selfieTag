@@ -44,6 +44,10 @@ class IgMineController extends Controller {
 			$images->where('london.type', '=', $request->input('type'));
 			$append['type'] = $request->input('type');
 		}
+		if($request->has('filter')){
+			$images->where('london.filter', '=', $request->input('filter'));
+			$append['filter'] = $request->input('filter');
+		}
 		$images = $images->paginate(102);
 
 		return view('frontend.igmine.london',[
