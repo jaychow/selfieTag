@@ -31,7 +31,8 @@ class IgMineController extends Controller {
 	{
 		$images = DB::table('london')
 			->leftJoin('selfie','selfie.id', '=', 'london.id')
-			->select('london.*', 'selfie.id as is_selfie');
+			->select('london.*', 'selfie.id as is_selfie')
+			->orderBy('created_time', 'desc');
 		if($request->has('tag')){
 			$images->join('tags_images', 'london.id', '=', 'tags_images.image_id')
 				   ->join('tags', 'tags_images.tag_id', '=', 'tags.id')

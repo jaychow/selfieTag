@@ -3,7 +3,7 @@
 /**
  * Frontend Controllers
  */
-get('/', 'FrontendController@index')->name('home');
+get('/', 'IgMineController@london')->name('home');
 get('macros', 'FrontendController@macros');
 get('london', 'IgMineController@london');
 get('selfie', 'IgMineController@selfie');
