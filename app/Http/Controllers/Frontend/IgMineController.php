@@ -118,7 +118,8 @@ class IgMineController extends Controller {
 		$images = $images->get();
 
 		return view('frontend.igmine.selfie',[
-			'images' => $images
+			'images' => $images,
+			'total' => sizeof($images)
 		]);
 	}
 

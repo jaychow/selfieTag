@@ -19,6 +19,14 @@
     </div>
 @endsection
 
+@section('footer')
+    <div class="row">
+        <div class="text-center col-md-12">
+            Total number of selfies tagged: {{$total}}
+        </div>
+    </div>
+@endsection
+
 @section('after-scripts-end')
     @include('frontend.scripts.selfie-tag')
 @stop
