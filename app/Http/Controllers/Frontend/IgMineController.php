@@ -38,7 +38,7 @@ class IgMineController extends Controller {
 				   ->join('tags', 'tags_images.tag_id', '=', 'tags.id')
 				   ->where('tags.tag', '=', $request->input('tag'));
 		}
-		$images = $images->simplePaginate(102);
+		$images = $images->paginate(102);
 
 		return view('frontend.igmine.london',[
 			'images' => $images
