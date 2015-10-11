@@ -46,6 +46,9 @@ body {
   padding-top: $navHeight;
   padding-bottom: $navHeight;
 }
+.main-grid{
+  padding-bottom:$navHeight;
+}
 .footer {
   position: fixed;
   bottom: 0;
