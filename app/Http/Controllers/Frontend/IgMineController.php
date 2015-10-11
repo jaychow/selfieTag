@@ -48,6 +48,10 @@ class IgMineController extends Controller {
 			$images->where('london.filter', '=', $request->input('filter'));
 			$append['filter'] = $request->input('filter');
 		}
+		if($request->has('caption')){
+			$images->where('london.caption', 'LIKE', '%'.$request->input('caption').'%');
+			$append['caption'] = $request->input('caption');
+		}
 		$images = $images->paginate(102);
 
 		return view('frontend.igmine.london',[
@@ -77,6 +81,10 @@ class IgMineController extends Controller {
 		if($request->has('filter')){
 			$images->where('london.filter', '=', $request->input('filter'));
 			$append['filter'] = $request->input('filter');
+		}
+		if($request->has('caption')){
+			$images->where('london.caption', 'LIKE', '%'.$request->input('caption').'%');
+			$append['caption'] = $request->input('caption');
 		}
 		$images = $images->paginate(100);
 
