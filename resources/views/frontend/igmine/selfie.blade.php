@@ -22,7 +22,9 @@
 @section('footer')
     <div class="row">
         <div class="text-center col-md-12">
-            Total number of selfies tagged: {{$total}}
+            <p>
+                <h4>Total number of selfies tagged: {{$total}}</h4>
+            </p>
         </div>
     </div>
 @endsection
